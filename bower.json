@@ -22,6 +22,7 @@
     "font-awesome": "~4.5.0",
     "vue-resource": "~0.7.0",
     "odometer": "^0.4.7",
-    "alertify.js": "alertifyjs#^1.0.8"
+    "alertify.js": "alertifyjs#^1.0.8",
+    "animate.css": "^3.5.1"
   }
 }

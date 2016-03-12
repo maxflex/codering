@@ -1,0 +1,243 @@
+/* line 1, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 4, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+body {
+  display: flex;
+  overflow: hidden;
+}
+
+/* line 9, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+footer {
+  position: fixed;
+  width: 100%;
+  display: block;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  z-index: 999;
+}
+/* line 18, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+footer span {
+  line-height: 50px;
+}
+
+/* line 23, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.full-size {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 29, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.language:hover {
+  z-index: 998;
+}
+
+/* line 35, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.avatar {
+  height: 112%;
+  width: 112%;
+  position: relative;
+  top: -6%;
+  left: -6%;
+  border-radius: 50% !important;
+  float: left;
+  margin-right: 5px;
+}
+
+/* line 48, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.language {
+  flex: 1;
+  position: relative;
+  transition: all linear .3s;
+}
+
+/* line 58, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.language-title {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  /* don't forget to use the prefixes you need */
+}
+/* line 75, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.language-title h1 {
+  margin: 0 !important;
+  padding: 25px 0;
+}
+/* line 79, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.language-title .bg-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center center;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  transform: scale(1.1);
+}
+
+@keyframes bgZoom {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+/* line 112, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.language-body {
+  position: absolute;
+  height: calc(100% - 114px);
+  width: 100%;
+}
+/* line 116, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.language-body .loved-by {
+  margin-bottom: 20px;
+}
+
+/* line 122, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.btn-like {
+  height: 100px;
+  width: 100px;
+}
+/* line 126, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.btn-like i {
+  line-height: 105px;
+  font-size: 4rem;
+}
+
+/* line 133, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+div.full-width {
+  width: 100% !important;
+}
+
+/* line 140, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.hi-icon {
+  display: inline-block;
+  font-size: 4rem;
+  line-height: 98px;
+  cursor: pointer;
+  margin: 15px 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+/* line 155, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.hi-icon:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 167, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.hi-icon:before {
+  speak: none;
+  font-size: 48px;
+  line-height: 90px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Effect 8 */
+/* line 181, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.hi-icon-effect-8 .hi-icon {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+  -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
+  transition: transform ease-out 0.1s, background 0.2s;
+}
+
+/* line 188, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.hi-icon-effect-8 .hi-icon:after {
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: -1;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+/* line 201, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.hi-icon-effect-8 .hi-icon:hover {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-transform: scale(0.93);
+  -moz-transform: scale(0.93);
+  -ms-transform: scale(0.93);
+  transform: scale(0.93);
+  color: #fff;
+}
+
+/* line 210, /Users/maxflex/Documents/Ruby/codering/app/assets/stylesheets/style.scss */
+.hi-icon-effect-8 .hi-icon:hover:after {
+  -webkit-animation: sonarEffect 1.3s ease-out 75ms;
+  -moz-animation: sonarEffect 1.3s ease-out 75ms;
+  animation: sonarEffect 1.3s ease-out 75ms;
+}
+
+@-webkit-keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    -webkit-transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@-moz-keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    -moz-transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

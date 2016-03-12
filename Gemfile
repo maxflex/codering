@@ -35,10 +35,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem "slim-rails"
-
+gem 'simple_form'
 gem "omniauth-github"
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'hirb-unicode'
 

@@ -1,0 +1,23 @@
+= image_tag('logo/codering.png', class: 'main-logo')
+.valign-wrapper.full-size.main-page
+  .valign style='width: 100%'
+    .container
+      .row
+        .col.s12.center
+          h5 Add a new programming language
+      .row
+        .col.s8.offset-s2.relative.center
+          = simple_form_for :language, url: add_index_path do |f|
+            form
+              .row
+                .col.s8.offset-s2
+                  .input-field
+                    = f.input :title, required: false
+                  .input-field
+                    = f.input :website, required: false
+              .row style='margin-top: 50px'
+                .col.s12.center
+                  = f.button :submit, 'ADD', class: 'btn btn-large waves-light'
+                  / .btn.btn-large.light-blue.waves-effect.waves-light @click='proceed' ADD
+
+/ = render(partial: 'partials/login')

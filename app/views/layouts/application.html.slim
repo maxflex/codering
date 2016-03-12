@@ -3,6 +3,9 @@ html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     title = yield(:title)
+    meta name='keywords' content="#{ yield(:keywords) }"
+    meta name='description' content="#{ yield(:description) }"
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = javascript_include_tag params[:controller]

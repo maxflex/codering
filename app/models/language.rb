@@ -1,6 +1,6 @@
 class Language < ActiveRecord::Base
   has_many :likes
-  enum category: [:language, :framework]
+  enum category: [:language, :framework, :frontend]
 
   # Получить цвет в RGBA
   def rgba(a = 0.1)

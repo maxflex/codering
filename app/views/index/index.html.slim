@@ -1,31 +1,32 @@
-/ .container style='position: relative'
-  / .valign-wrapper.full-size style='justify-content: center; position: absolute'
-  /   .valign
-  /     .input-field.col.s12
+= content_for :title, "Codering | Programming language true ratings"
+/ = content_for :keywords, "#{@language_left.title} vs #{@language_right.title} which one should I learn which is better programming #{@language_left.category} popular #{@language_left.short} or #{@language_right.short} rating stats popularity best versus"
+/ = content_for :description, "What programming language should I learn: #{@language_left.title} or #{@language_right.title}? 2016 programming #{@language_left.category}s rating on Codering"
 
-.valign-wrapper.full-size.light-blue.lighten-5
-  .valign style='width: 100%'
-    .container
-      .row
-        .col.s6
-          select v-model='language_left'
-            - Language::categories.each do |category, index|
-              optgroup label="#{category.capitalize.pluralize}"
-                - Language.where(category: index).each do |language|
-                  option value="#{language.short}" = language.title
-        .col.s6
-          select v-model='language_right'
-            - Language::categories.each do |category, index|
-              optgroup label="#{category.capitalize.pluralize}"
-                - Language.where(category: index).each do |language|
-                  option value="#{language.short}" = language.title
-      .row
-        .col.s12.center
-          | {{ language_left }}
-        .col.s12.center
-          | {{ language_right }}
-      .row
-        .col.s12.center
-          .btn.btn-large.light-blue.waves-effect.waves-light @click='proceed' CONFIRM
-
-/ = render(partial: 'partials/login')
+.vue-app data="#{@data}"
+  = image_tag('logo/codering.png', class: 'main-logo animated fadeInDown')
+  - if notice
+    .notice.green.darken-2 = notice
+  .valign-wrapper.full-size.main-page
+    .valign style='width: 100%'
+      .container
+        .row
+          .col.s8.offset-s2.relative
+            .row
+              .col.s4 style='text-align: right'
+                img.animated.fadeInLeft.circle @click='select_language(LANGUAGE_LEFT)' src='{{ img_src(languages[LANGUAGE_LEFT]) }}'
+              .col.s4
+                .full-size
+                  span.vs VS
+              .col.s4 style='text-align: left'
+                img.animated.fadeInRight.circle @click='select_language(LANGUAGE_RIGHT)' src='{{ img_src(languages[LANGUAGE_RIGHT]) }}'
+            .row style='margin-top: 100px'
+              .col.s12.center
+                button.btn.btn-large.light-blue.waves-effect.waves-light.animated.fadeInUp :disabled='! same_categories' @click='proceed' COMPARE
+            .row
+              .col.s12.center.red-text 
+                .full-size 
+                  span v-show='! same_categories' 
+                    | Can't compare different categories
+  .add-language 
+    a.animated.fadeIn href='add' Add new language
+  = render 'overlay'

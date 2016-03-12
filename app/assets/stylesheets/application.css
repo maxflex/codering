@@ -14,6 +14,7 @@
  *= require font-awesome/css/font-awesome.min
  *= require odometer/themes/odometer-theme-minimal
  *= require alertify.js/dist/css/alertify
+ *= require animate.css/animate
  *
  *= require_tree .
  *= require_self

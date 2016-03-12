@@ -1,17 +1,17 @@
 class BattleController < ApplicationController
   def index
-    # @data = {
-    #   language_left: Language.find_by_name(params[:language_1]),
-    #   language_right: Language.find_by_name(params[:language_2])
-    # }.to_json(include: 'likes')
-    # logger.info @data.colorize :red
     to_json_data = {
-      methods: ['rgba', 'lighten_color', 'likes_count'],
+      methods: ['rgba', 'lighten_color', 'likes_count']
     }
 
-    @language_left  = Language.find_by_name(params[:language_1]).to_json(to_json_data)
-    @language_right = Language.find_by_name(params[:language_2]).to_json(to_json_data)
+    @language_left  = Language.find_by_name(params[:language_1])
+    @language_right = Language.find_by_name(params[:language_2])
 
-    logger.info JSON.parse(@language_right).to_yaml.colorize :yellow
+    if @language_left.nil? || @language_right.nil?
+      redirect_to root_path
+    end
+
+    @language_left_json = @language_left.to_json(to_json_data)
+    @language_right_json = @language_right.to_json(to_json_data)
   end
 end

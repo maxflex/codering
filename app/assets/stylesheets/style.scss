@@ -1,9 +1,95 @@
+$pink-dark: #8F556F;
+$pink-light: #ED9CA1;
+
 html, body {
   height: 100%;
 }
 body {
   display: flex;
   overflow: hidden;
+}
+
+.text-main {
+  color: $pink-dark;
+}
+
+.add-language, .notice {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.notice {
+  text-align: center;
+  color: white;
+  padding: 5px;
+  bottom: 0;
+  z-index: 99;
+}
+
+.vue-app {
+  height: 100%;
+  width: 100%;
+}
+
+.capital-letter {
+  display: block;
+  &:first-letter {
+      text-transform: uppercase;
+  }
+}
+
+.main-logo {
+  width: 500px;
+  position: absolute;
+  left: calc(50% - 250px);
+  top: 50px;
+}
+
+.main-page {
+  background-color: rgba(237,156,161,0.05);
+  background-image: image-url('backgrounds/blurred.jpeg');
+  // background-size: cover;
+  & .container {
+    margin-top: 100px;
+  }
+  & .btn-large {
+    background-color: $pink-dark !important;
+    width: 50%;
+    position: static;
+    &:disabled {
+      background-color: #DFDFDF !important;
+    }
+  }
+  & span.vs {
+    position: absolute;
+    left: calc(50% - 12px);
+    font-size: 20px;
+    color: $pink-light;
+    top: 60px;
+  }
+
+  .full-size {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .circle {
+    height: 150px;
+    border: 5px solid $pink-light;
+    cursor: pointer;
+    transition: all linear .2s;
+    &:hover {
+      border-color: $pink-dark;
+    }
+  }
+}
+
+.relative {
+  position: relative !important;
 }
 
 footer {
@@ -56,18 +142,7 @@ footer {
 }
 
 .language-title {
-  // background-size: 100% auto;
-  // background-position: center center;
-  // background-size: cover;
-
-  // -webkit-text-stroke: 1px rgba(0, 0, 0, 1);
-
-  // text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
-  // text-shadow:
-  //   -1px -1px 0 #000,
-  //   1px -1px 0 #000,
-  //   -1px 1px 0 #000,
-  //   1px 1px 0 #000;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   color: rgba(255, 255, 255, 1);

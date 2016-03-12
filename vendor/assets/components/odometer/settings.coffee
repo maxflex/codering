@@ -1,2 +1,2 @@
 window.odometerOptions =
-  test: 1
+  from: 0

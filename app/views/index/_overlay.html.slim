@@ -1,0 +1,17 @@
+.overlay.overlay-scale :class="{'open': overlay}"
+  button.overlay-close type='button' @click='overlay = false' Close
+  .valign-wrapper.full-size
+    .valign style='width: 100%'
+      .row style='padding: 100px'
+        section v-for='category in categories'
+          col.s12
+            h5.capital-letter
+              | {{ category }}
+          col.s12
+            .lng v-for="language in data[category]"
+              .selected v-show='already_selected(language)'
+                i.material-icons.green-text.text-darken-2 done
+              .not-selected @click='select(language)'
+                img.circle src='{{ img_src(language) }}'
+                .center
+                  | {{ language.title }}

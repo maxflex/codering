@@ -1,16 +1,21 @@
 = render(partial: 'partials/login')          
 = render(partial: 'partials/must_login_modal')
 
-language language="#{ @language_left }"
-language language="#{ @language_right }"
+= content_for :title, "#{@language_left.title} or #{@language_right.title}? Which #{@language_left.category} is better?"
+= content_for :keywords, "#{@language_left.title} vs #{@language_right.title} which one should I learn which is better programming #{@language_left.category} popular #{@language_left.short} or #{@language_right.short} rating stats popularity best versus"
+= content_for :description, "What programming language should I learn: #{@language_left.title} or #{@language_right.title}? 2016 programming #{@language_left.category}s rating on Codering"
+
+language language="#{ @language_left_json }"
+language language="#{ @language_right_json }"
 
 template#language-template
   .language.hoverable
-    .language-title
-      .bg-image :style="{'background-image': 'url(images/languages/' + language.short + '.png)'}"
-      / .bg-image style="background-image: url('images/languages/{{language.short}}.png')" 
-      h1.center-align
-          | {{ language.title }}
+    a target='_blank' :href='language.url'
+      .language-title.hoverable
+        .bg-image :style="{'background-image': 'url(images/backgrounds/' + language.category + '/' + language.short + '.png)'}"
+        / .bg-image style="background-image: url('images/languages/{{language.short}}.png')" 
+        h1.center-align
+            | {{ language.title }}
     .language-body.valign-wrapper.center-align :style='{background: language.rgba}'
       .full-width
         h5.loved-by :style='{color: language.background}'
