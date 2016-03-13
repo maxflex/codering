@@ -36,21 +36,3 @@ $(document).on 'ready', ->
       # select initial languages
       this.languages[this.LANGUAGE_LEFT] = this.data['languages'][0]
       this.languages[this.LANGUAGE_RIGHT] = this.data['languages'][1]
-
-
-
-# Vue.js + Materialize.css select fix
-# @link: http://stackoverflow.com/a/35318377/2274406
-# Vue.directive 'select',
-#   twoWay: true
-#   bind: ->
-#     $(@el).material_select()
-#     self = this
-#     $(@el).on 'change', ->
-#       self.set $(self.el).val()
-#   update: (newValue, oldValue) ->
-#     $(@el).val newValue
-#   unbind: ->
-#     $(@el).material_select 'destroy'
-
-# Vue app
