@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: labattle_production
-  username: labattle
-  password: <%= ENV['LABATTLE_DATABASE_PASSWORD'] %>
+  database: codering_production
+  username: rails
+  password: M5glzzpMlQ
