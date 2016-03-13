@@ -23,8 +23,8 @@
 // require angular2/bundles/angular2.dev
 // require angular2/bundles/http.dev
 
-//= require vue/dist/vue
-//= require vue-resource/dist/vue-resource
+// require vue/dist/vue
+// require vue-resource/dist/vue-resource
 
 //= require odometer/settings
 //= require odometer/odometer
