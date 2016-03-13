@@ -33,6 +33,7 @@ gem 'unicorn'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
+gem 'rvm-capistrano', group: :development
 
 gem "slim-rails"
 gem 'simple_form'
