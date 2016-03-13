@@ -27,7 +27,6 @@ $(document).on 'ready page:change', ->
 
     created: ->
       this.language = JSON.parse(this.language)
-      this.language.likes_count += 233
     ready: ->
       this.animate()
 

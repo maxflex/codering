@@ -32,8 +32,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
-gem 'rvm-capistrano', group: :development
+# gem 'rvm-capistrano', group: :development
+# gem 'capistrano', '~> 3.0'
+# gem 'capistrano-rvm'
+# gem 'capistrano-rails', group: :development
+group :development do
+    # gem 'capistrano'
+    # gem 'capistrano-rvm'
+    gem 'capistrano-rails'
+    # gem 'capistrano-bundler'
+end
 
 gem "slim-rails"
 gem 'simple_form'

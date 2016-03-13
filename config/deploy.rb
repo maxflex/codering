@@ -42,21 +42,29 @@ set :pty, true
 
 namespace :deploy do
   before :starting, :ensure_user do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    on roles(:web) do
       within release_path do
         execute :service, 'unicorn2', 'stop'
       end
     end
   end
-  after :restart, :clear_cache do
+  after :finishing, :notify do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
       within release_path do
-        execute :service, 'unicorn2', 'start'
         # execute :rake, 'assets:precompile'
-        # execute :rake, 'cache:clear'
+        execute :service, 'unicorn2', 'start'
       end
     end
   end
+  # after :restart, :clear_cache do
+  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
+  #     # Here we can do anything such as:
+  #     within release_path do
+  #       execute :rake, 'assets:precompile'
+  #       execute :service, 'unicorn2', 'start'
+  #       # execute :rake, 'cache:clear'
+  #     end
+  #   end
+  # end
 
 end

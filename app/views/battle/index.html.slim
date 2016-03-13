@@ -18,9 +18,11 @@ template#language-template
     .language-body.valign-wrapper.center-align :style='{background: language.rgba}'
       .full-width
         h5.loved-by :style='{color: language.background}'
-          | Loved by 
-          b.odometer v-el:likes-count=''
-            | {{language.likes_count}}
-          |  {{language.likes_count | pluralize 'developer'}}
+          span v-show='language.likes_count > 0'
+            | Loved by 
+            b.odometer v-el:likes-count=''
+              | {{language.likes_count}}
+            |  {{language.likes_count | pluralize 'developer'}}
+          span.be-first v-else='' Be first to like the {{ language.category }}
         a.btn-floating.btn-like.waves-effect :style='{background: language.background}' @click='like'
           i.fa.fa-heart
