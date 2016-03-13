@@ -12,6 +12,6 @@
               .selected v-show='already_selected(language)'
                 i.material-icons.green-text.text-darken-2 done
               .not-selected @click='select(language)'
-                img.circle src='{{ img_src(language) }}'
+                img.circle :src='img_src(language)'
                 .center
                   | {{ language.title }}

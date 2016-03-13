@@ -35,5 +35,7 @@ module Codering
       authentication: 'plain',
       enable_starttls_auto: true
     }
+
+    config.autoload_paths << Rails.root.join('app/models/data')
   end
 end

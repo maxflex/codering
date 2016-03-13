@@ -1,8 +1,8 @@
 = content_for :title, "Codering | Programming language true ratings"
-/ = content_for :keywords, "#{@language_left.title} vs #{@language_right.title} which one should I learn which is better programming #{@language_left.category} popular #{@language_left.short} or #{@language_right.short} rating stats popularity best versus"
-/ = content_for :description, "What programming language should I learn: #{@language_left.title} or #{@language_right.title}? 2016 programming #{@language_left.category}s rating on Codering"
+= content_for :keywords, "#{Seo::MAIN_KEYWORDS} #{ Language::get_keywords(@data) }"
+= content_for :description, "#{ Seo::MAIN_DESCRIPTION }"
 
-.vue-app data="#{@data}"
+.vue-app data="#{ @json_data }"
   = image_tag('logo/codering.png', class: 'main-logo animated fadeInDown')
   - if notice
     .notice.green.darken-2 = notice
@@ -13,12 +13,12 @@
           .col.s8.offset-s2.relative
             .row
               .col.s4 style='text-align: right'
-                img.animated.fadeInLeft.circle @click='select_language(LANGUAGE_LEFT)' src='{{ img_src(languages[LANGUAGE_LEFT]) }}'
+                img.animated.fadeInLeft.circle @click='select_language(LANGUAGE_LEFT)' :src='img_src(languages[LANGUAGE_LEFT])'
               .col.s4
                 .full-size
                   span.vs VS
               .col.s4 style='text-align: left'
-                img.animated.fadeInRight.circle @click='select_language(LANGUAGE_RIGHT)' src='{{ img_src(languages[LANGUAGE_RIGHT]) }}'
+                img.animated.fadeInRight.circle @click='select_language(LANGUAGE_RIGHT)' :src='img_src(languages[LANGUAGE_RIGHT])'
             .row style='margin-top: 100px'
               .col.s12.center
                 button.btn.btn-large.light-blue.waves-effect.waves-light.animated.fadeInUp :disabled='! same_categories' @click='proceed' COMPARE

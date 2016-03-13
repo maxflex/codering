@@ -26,4 +26,15 @@ class Language < ActiveRecord::Base
   def self.find_by_name(name)
     find_by(short: name.downcase)
   end
+
+  # generate keywords from all languages
+  def self.get_keywords(data)
+    languages = Array.new
+    categories.each do |category, index|
+      data[category.pluralize].each do |language|
+        languages << language.title
+      end
+    end
+    languages.join ', '
+  end
 end
