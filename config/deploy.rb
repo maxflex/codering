@@ -8,6 +8,11 @@ set :scm, :git
 set :repo_url, 'https://github.com/maxflex/codering.git'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/rails/codering'
+set :rails_env, :production
+set :keep_releases, 5
+
+# files we want symlinking to specific entries in shared
+# set :linked_files, %w{config/database.yml}
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -36,11 +41,18 @@ set :pty, true
 # set :keep_releases, 5
 
 namespace :deploy do
+  before :starting, :ensure_user do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      within release_path do
+        execute :service, 'unicorn2', 'stop'
+      end
+    end
+  end
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do
-        execute :service, 'unicorn2 restart'
+        execute :service, 'unicorn2', 'start'
         # execute :rake, 'assets:precompile'
         # execute :rake, 'cache:clear'
       end
