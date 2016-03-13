@@ -12,4 +12,5 @@
 !/log/.keep
 /tmp
 /config/provision/keys
+/config/deploy
 .env
