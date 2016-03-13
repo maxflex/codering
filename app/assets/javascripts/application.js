@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree ../../../vendor/assets/components/Materialize/js
+// require_tree ../../../vendor/assets/components/Materialize/js
 
 // require es6-shim/es6-shim.min
 // require systemjs/dist/system-polyfills
