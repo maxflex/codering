@@ -13,7 +13,6 @@ template#language-template
     a target='_blank' :href='language.url'
       .language-title.hoverable
         .bg-image :style="{'background-image': 'url(images/backgrounds/' + language.category + '/' + language.short + '.png)'}"
-        / .bg-image style="background-image: url('images/languages/{{language.short}}.png')" 
         h1.center-align
             | {{ language.title }}
     .language-body.valign-wrapper.center-align :style='{background: language.rgba}'
