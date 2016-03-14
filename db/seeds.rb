@@ -115,6 +115,13 @@ languages = [
       url: 'https://www.dartlang.org/',
       background: '#1AA9C1',
     },
+    {
+      title: 'ReactJS',
+      short: 'react',
+      category: Language.categories[:frontend],
+      url: 'https://facebook.github.io/react/',
+      background: '#61dafb',
+    }
 ]
 
 languages.each do |language|
