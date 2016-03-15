@@ -20,11 +20,19 @@ class Language < ActiveRecord::Base
   end
 
   def likes_count
-    likes.length
+    likes.length + (stars / 25)
   end
 
   def self.find_by_name(name)
     find_by(short: name.downcase)
+  end
+
+  def self.update_or_create(attributes)
+    if exists?(title: attributes[:title])
+      where(title: attributes[:title]).update_all(attributes)
+    else
+      create(attributes)
+    end
   end
 
   # generate keywords from all languages

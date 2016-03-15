@@ -16,6 +16,7 @@ languages = [
       category: Language.categories[:language],
       url: 'https://php.net',
       background: '#5F81BA',
+      github: 'php/php-src',
     },
     {
       title: 'Ruby',
@@ -23,20 +24,23 @@ languages = [
       category: Language.categories[:language],
       url: 'https://www.ruby-lang.org/',
       background: '#C00',
+      github: 'ruby/ruby',
     },
     {
       title: 'Laravel',
       short: 'laravel',
       category: Language.categories[:framework],
       url: 'https://laravel.com/',
-      background: '#e74430'
+      background: '#e74430',
+      github: 'laravel/laravel',
     },
     {
       title: 'Yii 2',
       short: 'yii2',
       category: Language.categories[:framework],
       url: 'http://www.yiiframework.com/',
-      background: '#0471B8'
+      background: '#0471B8',
+      github: 'yiisoft/yii2',
     },
     {
       title: 'Python',
@@ -44,6 +48,7 @@ languages = [
       category: Language.categories[:language],
       url: 'https://www.python.org/',
       background: '#3470A2',
+      github: 'python/cpython',
     },
     {
       title: 'NodeJS',
@@ -51,6 +56,7 @@ languages = [
       category: Language.categories[:language],
       url: 'https://nodejs.org/',
       background: '#026e00',
+      github: 'nodejs/node',
     },
     {
       title: 'Django',
@@ -58,6 +64,7 @@ languages = [
       category: Language.categories[:framework],
       url: 'https://www.djangoproject.com',
       background: '#0C4B33',
+      github: 'django/django',
     },
     {
       title: 'Rails',
@@ -65,6 +72,7 @@ languages = [
       category: Language.categories[:framework],
       url: 'http://rubyonrails.org/',
       background: '#C00',
+      github: 'rails/rails',
     },
     {
       title: 'AngularJS',
@@ -72,6 +80,7 @@ languages = [
       category: Language.categories[:frontend],
       url: 'https://angularjs.org/',
       background: '#E03237',
+      github: 'angular/angular.js',
     },
     {
       title: 'Vue.js',
@@ -79,6 +88,7 @@ languages = [
       category: Language.categories[:frontend],
       url: 'http://vuejs.org/',
       background: '#41B883',
+      github: 'vuejs/vue',
     },
     {
       title: 'jQuery',
@@ -86,6 +96,7 @@ languages = [
       category: Language.categories[:frontend],
       url: 'https://jquery.com/',
       background: '#0769AD',
+      github: 'jquery/jquery',
     },
     {
       title: 'JavaScript',
@@ -93,6 +104,7 @@ languages = [
       category: Language.categories[:frontend],
       url: 'https://www.javascript.com/',
       background: '#F0DB4F',
+      github: 'airbnb/javascript',
     },
     {
       title: 'ES6',
@@ -100,6 +112,7 @@ languages = [
       category: Language.categories[:frontend],
       url: 'http://es6-features.org/',
       background: '#F26522',
+      github: 'lukehoban/es6features',
     },
     {
       title: 'Meteor',
@@ -107,6 +120,7 @@ languages = [
       category: Language.categories[:frontend],
       url: 'https://www.meteor.com/',
       background: '#1D232E',
+      github: 'meteor/meteor',
     },
     {
       title: 'Dart',
@@ -114,6 +128,7 @@ languages = [
       category: Language.categories[:frontend],
       url: 'https://www.dartlang.org/',
       background: '#1AA9C1',
+      github: 'dart-lang/sdk',
     },
     {
       title: 'ReactJS',
@@ -121,9 +136,10 @@ languages = [
       category: Language.categories[:frontend],
       url: 'https://facebook.github.io/react/',
       background: '#61dafb',
+      github: 'facebook/react',
     }
 ]
 
 languages.each do |language|
-  Language.find_or_create_by(language)
+  Language.update_or_create(language)
 end

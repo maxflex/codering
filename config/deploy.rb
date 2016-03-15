@@ -44,7 +44,7 @@ namespace :deploy do
   before :starting, :ensure_user do
     on roles(:web) do
       within release_path do
-        execute :service, 'unicorn2', 'stop'
+        execute :service, 'unicorn_codering', 'stop'
       end
     end
   end
@@ -52,7 +52,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       within release_path do
         # execute :rake, 'assets:precompile'
-        execute :service, 'unicorn2', 'start'
+        execute :service, 'unicorn_codering', 'start'
       end
     end
   end

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', :as => :signout
 
+  CommandController.action_methods.each do |action|
+    get "command/#{action}" => "command#{action}"
+  end
+
   resources :add, only: [:index, :create]
 
   namespace :api, defaults: {format: 'json'} do
