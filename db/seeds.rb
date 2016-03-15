@@ -71,7 +71,7 @@ languages = [
       short: 'angular',
       category: Language.categories[:frontend],
       url: 'https://angularjs.org/',
-      background: '#1976D2',
+      background: '#E03237',
     },
     {
       title: 'Vue.js',
