@@ -75,7 +75,7 @@ languages = [
       github: 'rails/rails',
     },
     {
-      title: 'AngularJS',
+      title: 'Angular',
       short: 'angular',
       category: Language.categories[:frontend],
       url: 'https://angularjs.org/',
@@ -137,6 +137,14 @@ languages = [
       url: 'https://facebook.github.io/react/',
       background: '#61dafb',
       github: 'facebook/react',
+    },
+    {
+      title: 'Angular 2',
+      short: 'angular2',
+      category: Language.categories[:frontend],
+      url: 'https://angular.io/',
+      background: '#0143A3',
+      github: 'angular/angular',
     }
 ]
 
