@@ -2,6 +2,18 @@ class Language < ActiveRecord::Base
   has_many :likes
   enum category: [:language, :framework, :frontend]
 
+  def self.trending
+    languages = {}
+    categories.each do |category, index|
+      languages[category] = joins(:likes)
+                              .group('languages.id')
+                              .order('count(languages.id) desc')
+                              .where(category: index)
+                              .first
+    end
+    languages
+  end
+
   # Получить цвет в RGBA
   def rgba(a = 0.1)
     color = ( background.match /#(..?)(..?)(..?)/ )[1..3]

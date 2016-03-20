@@ -14,4 +14,18 @@ class BattleController < ApplicationController
     @language_left_json = @language_left.to_json(to_json_data)
     @language_right_json = @language_right.to_json(to_json_data)
   end
+
+  def single
+    to_json_data = {
+      methods: ['rgba', 'lighten_color', 'likes_count']
+    }
+
+    @language = Language.find_by(short: params[:language], category: Language::categories[params[:category]])
+
+    if @language.nil?
+      redirect_to root_path
+    end
+
+    @language_json = @language.to_json(to_json_data)
+  end
 end

@@ -1,0 +1,26 @@
+= content_for :title, "Codering | Trending programming languages in " + Time.now.year.to_s
+
+= image_tag('logo/codering.png', class: 'main-logo animated fadeIn')
+.valign-wrapper.full-size.main-page
+  .valign style='width: 100%'
+    .container.animated.fadeIn
+      .row
+        .s12.center
+          h1.most-popular Most popular languages and frameworks in #{ Time.now.year }
+      .row
+        .s12.trending-list
+          - @languages.each do |category, language|
+            .language
+              h4 Trending #{category}
+              a href="/#{category}/#{language.short}"
+                img.circle src="images/nodes/#{category}/#{language.short}.png"
+              div
+                span style="background-color: #{ language.background }" #{ language.title }
+              h4.green-text style='margin-top: 3px' 
+                i.material-icons trending_up
+                | #{ language.likes.length }
+footer.animated.fadeInUp
+  .center-align
+    a.waves-effect.waves-light.btn.grey.darken-4 href='/'
+      i.fa.fa-reply.material-icons.left
+      | Back to Codering

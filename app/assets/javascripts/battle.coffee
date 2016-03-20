@@ -1,6 +1,4 @@
-$(document).on 'ready page:change', ->
-  Vue.config.debug = true
-
+$(document).on 'ready page:load', ->
   # Language component
   Vue.component 'language',
     props: ['language']
@@ -33,25 +31,3 @@ $(document).on 'ready page:change', ->
   # Vue app
   new Vue
     el: 'body'
-
-
-
-
-
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
-#
-# $(document).ready ->
-# bgAnimate()
-
-# Animate backgrounds
-# bgAnimate = ->
-#   img = $('.bg-image')
-#   scale = 1.0
-#   anim = setInterval ->
-#       img.css 'transform', "scale(#{scale})"
-#       scale += 0.002
-#       clearInterval(anim) if scale > 2.2
-#   , 5

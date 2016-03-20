@@ -13,12 +13,44 @@ body {
   color: $pink-dark;
 }
 
-.add-language, .notice {
+.bottom-menu, .notice, .bottom-links {
   position: fixed;
   bottom: 10px;
   left: 0;
   width: 100%;
   text-align: center;
+  & .material-icons {
+    margin-right: 4px;
+    top: 2px;
+    position: relative;
+    font-size: 14px;
+  }
+}
+
+.bottom-menu {
+  padding: 5px;
+  bottom: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8f556f+0,ed9ca1+100 */
+  $bg-opacity: 0.4;
+  background: rgba(#8f556f, $bg-opacity); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(#8f556f, $bg-opacity) 0%, rgba(#8f556f, $bg-opacity) 50%, rgba(#ed9ca1, $bg-opacity) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(#8f556f, $bg-opacity) 0%,rgba(#8f556f, $bg-opacity) 50%,rgba(#ed9ca1, $bg-opacity) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(#8f556f, $bg-opacity) 0%,rgba(#8f556f, $bg-opacity) 50%,rgba(#ed9ca1, $bg-opacity) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f556f', endColorstr='#ed9ca1',GradientType=0 ); /* IE6-9 */
+  // background-color: rgba($pink-dark, 0.75);
+  & a {
+    color: white;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  & span.separator {
+    margin: 0 10px;
+    color: $pink-dark;
+    &:after {
+      content: '|';
+    }
+  }
 }
 
 .notice {

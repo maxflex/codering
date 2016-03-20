@@ -1,0 +1,27 @@
+= render(partial: 'partials/login')          
+= render(partial: 'partials/must_login_modal')
+
+= content_for :title, "#{@language.title} on Codering – #{@language.category} rating"
+= content_for :keywords, "#{@language.title} vs which one should I learn which is better programming #{@language.category} popular #{@language.short} rating stats popularity best versus trending"
+= content_for :description, "What programming language should I learn: #{@language.title}? 2016 programming #{@language.category}s rating on Codering"
+
+language language="#{ @language_json }"
+
+template#language-template
+  .language.hoverable
+    a target='_blank' :href='language.url'
+      .language-title.hoverable
+        .bg-image :style="{'background-image': 'url(/images/backgrounds/' + language.category + '/' + language.short + '.png)'}"
+        h1.center-align
+            | {{ language.title }}
+    .language-body.valign-wrapper.center-align :style='{background: language.rgba}'
+      .full-width
+        h5.loved-by :style='{color: language.background}'
+          span v-show='language.likes_count > 0'
+            | Loved by 
+            b.odometer v-el:likes-count=''
+              | {{language.likes_count}}
+            |  {{language.likes_count | pluralize 'developer'}}
+          span.be-first v-else='' Be first to like the {{ language.category }}
+        a.btn-floating.btn-like.waves-effect :style='{background: language.background}' @click='like'
+          i.fa.fa-heart

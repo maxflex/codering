@@ -27,6 +27,13 @@
                 .full-size 
                   span v-show='! same_categories' 
                     | Can't compare different categories
-  .add-language 
-    a.animated.fadeIn href='add' Add new language
+  .bottom-links.animated.fadeInUp
+    a href='trending' 
+      i.material-icons trending_up
+      | Trending languages in 
+      = Time.now.year
+    / span.separator
+    / a href='add'
+    /   i.material-icons add
+    /   | Add new language
   = render 'overlay'
