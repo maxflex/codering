@@ -16,7 +16,7 @@
                 img.animated.fadeInLeft.circle @click='select_language(LANGUAGE_LEFT)' :src='img_src(languages[LANGUAGE_LEFT])'
               .col.s4
                 .full-size
-                  span.vs VS
+                  span.vs.animated.fadeIn VS
               .col.s4 style='text-align: left'
                 img.animated.fadeInRight.circle @click='select_language(LANGUAGE_RIGHT)' :src='img_src(languages[LANGUAGE_RIGHT])'
             .row style='margin-top: 100px'
@@ -29,7 +29,7 @@
                     | Can't compare different categories
   .bottom-links.animated.fadeInUp
     a href='trending' 
-      i.material-icons trending_up
+      / i.material-icons trending_up
       | Trending languages in 
       = Time.now.year
     / span.separator
