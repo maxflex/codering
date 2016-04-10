@@ -32,7 +32,7 @@ class Language < ActiveRecord::Base
   end
 
   def likes_count
-    likes.length + (stars / 25)
+    likes.length + (stars / 22)
   end
 
   def self.find_by_name(name)
