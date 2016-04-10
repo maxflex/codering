@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'colorize'
 gem 'rename'
-gem 'sitemap_generator'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -43,6 +42,7 @@ group :development do
     # gem 'capistrano-rvm'
     gem 'capistrano-rails'
     # gem 'capistrano-bundler'
+    gem 'sitemap_generator', require: false
 end
 
 gem "slim-rails"
